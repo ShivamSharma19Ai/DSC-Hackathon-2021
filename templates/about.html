@@ -5,27 +5,148 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='stylesabout.css')}}">
+    <title>About</title>
     <style>
-        html {
-            background-image: url('static/bge.png');
-            height: 100%
-                /* Center and scale the image nicely */
-                background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
         }
 
-        p {
-            color: red;
+        html {
+            box-sizing: border-box;
+        }
 
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+            color: aqua;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
         }
     </style>
 </head>
 
 <body>
-    <p>Through this website you can earn rewards just by cleaning your nearby dustbin. Whenever the dustbin is full you
-        can see on the website and upload a photo of cleaned dustbin to redeem the reward</p>
+    <div class="about-section">
+        <h1>About Us!!!</h1>
+        <p>Our service is globally famous</p>
+        <p>As we do not ignore any area no matter how much far it is </p>
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src={{ url_for('static', filename='dan.png' ) }} alt="Danwand" style="width:100%">
+                <div class="container">
+                    <h2>Danwand N S</h2>
+                    <p class="title">API Developer</p>
+                    <p>I am Danwand, Nice Meeting you ! </p>
+                    <p>DanBrown47</p>
+                    <p><a href="https://github.com/DanBrown47" target="_blank" class="button">github</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src={{ url_for('static', filename='devesh.png' ) }} alt="Devesh" style="width:100%">
+                <div class="container">
+                    <h2>Devesh Udhlani</h2>
+                    <p class="title">Frontend Co-ordinator</p>
+                    <p>Contact me i'll help a lot</p>
+                    <p>646divi</p>
+                    <p><a href="https://github.com/646divi" target="_blank" class="button">github</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src={{ url_for('static', filename='Shivam.png' ) }} alt="Shivam" style="width:100%">
+                <div class="container">
+                    <h2>Shivam Sharma</h2>
+                    <p class="title">Frontend Developer</p>
+                    <p>Feel free to contact me :)</p>
+                    <p>
+                        ShivamSharma19Ai
+                    </p>
+                    <p><a href="https://github.com/ShivamSharma19Ai" target="_blank" class="button">github</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src={{ url_for('static', filename='sid.png' ) }} alt="Siddhartha Sharma" style="width:100%">
+                <div class="container">
+                    <h2>Siddhartha Sharma</h2>
+                    <p class="title">Backend Developer</p>
+                    <p>Comitted to your service.</p>
+                    <p>iamsiddharthasharma
+                    </p>
+                    <p><a href="https://github.com/iamsiddharthasharma " target="_blank" class="button">github</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
